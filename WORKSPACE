@@ -80,8 +80,9 @@ load("@io_bazel_rules_docker//container:container.bzl", "container_pull")
 
 container_pull(
     name = "busybox",
-    digest = "sha256:a2490cec4484ee6c1068ba3a05f89934010c85242f736280b35343483b2264b6",  # 1.31.1-uclibc
+    #digest = "sha256:a2490cec4484ee6c1068ba3a05f89934010c85242f736280b35343483b2264b6",  # 1.31.1-uclibc
     registry = "docker.io",
+    architecture = "arm64",
     repository = "library/busybox",
 )
 
@@ -130,8 +131,8 @@ http_file(
     name = "com_github_krallin_tini_tini_static_amd64",
     downloaded_file_path = "tini",
     executable = True,
-    sha256 = "eadb9d6e2dc960655481d78a92d2c8bc021861045987ccd3e27c7eae5af0cf33",
-    urls = ["https://github.com/krallin/tini/releases/download/v0.18.0/tini-static-amd64"],
+    #sha256 = "eadb9d6e2dc960655481d78a92d2c8bc021861045987ccd3e27c7eae5af0cf33",
+    urls = ["https://github.com/krallin/tini/releases/download/v0.18.0/tini-arm64"],
 )
 
 http_archive(
